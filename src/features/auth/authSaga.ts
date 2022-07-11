@@ -35,4 +35,3 @@ function* watchLoginFlow() {
 export function* authSaga() {
   yield fork(watchLoginFlow);
 }
-// Redux Saga: 18 - Phân tích cách xử lý navigation trong redux saga
