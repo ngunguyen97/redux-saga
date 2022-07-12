@@ -2,7 +2,7 @@ import { Box, makeStyles } from '@material-ui/core';
 import Header from 'components/common/Header';
 import Sidebar from 'components/common/Sidebar';
 import Dashboard from 'features/dashboard';
-import { Student } from 'features/student';
+import StudentFeature from 'features/student';
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
@@ -47,7 +47,7 @@ export function AdminLayout() {
             <Dashboard />
           </Route>
           <Route path="/admin/students">
-            <Student />
+            <StudentFeature />
           </Route>
         </Switch>
       </Box>
