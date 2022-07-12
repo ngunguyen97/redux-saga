@@ -4,13 +4,14 @@ import { Student } from 'models';
 
 export interface DashboardStatistics {
   maleCount: number;
-  femalCount: number;
+  femaleCount: number;
   highMarkCount: number;
   lowMarkCount: number;
 }
 
-export interface RankingByCityList {
-  cityID: string;
+export interface RankingByCity {
+  cityId: string;
+  cityName: string;
   rankingList: Student[];
 }
 
@@ -19,14 +20,14 @@ export interface DashboardState {
   statistics: DashboardStatistics;
   highestStudents: Student[];
   lowestStudents: Student[];
-  rankingByCityList: RankingByCityList[];
+  rankingByCityList: RankingByCity[];
 }
 
 const initialState: DashboardState = {
   loading: false,
   statistics: {
     maleCount: 0,
-    femalCount: 0,
+    femaleCount: 0,
     highMarkCount: 0,
     lowMarkCount: 0,
   },
@@ -58,7 +59,7 @@ const dashboardSlice = createSlice({
     setLowestStudents(state, action: PayloadAction<Student[]>) {
       state.lowestStudents = action.payload;
     },
-    setRankingByCityList(state, action: PayloadAction<RankingByCityList[]>) {
+    setRankingByCityList(state, action: PayloadAction<RankingByCity[]>) {
       state.rankingByCityList = action.payload;
     },
   },
