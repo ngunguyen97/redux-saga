@@ -8,9 +8,9 @@ function* handleLogin(payload: LoginPayload) {
     localStorage.setItem('access_token', 'fake_token');
     yield put(authActions.loginSuccess({ id: 1, name: 'John Doe' }));
 
-    yield put(push('/admin'));
+    yield put(push('/admin/dasboard'));
   } catch (error) {
-    yield put(authActions.loginFailure('Failure'));
+    if (error instanceof Error) yield put(authActions.loginFailure(error.message));
   }
 }
 
