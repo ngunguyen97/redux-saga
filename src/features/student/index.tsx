@@ -6,8 +6,6 @@ import ListPage from './pages/ListPage';
 export default function StudentFeature() {
   const match = useRouteMatch();
 
-  console.log(match);
-
   return (
     <Switch>
       <Route path={match.path} exact>
